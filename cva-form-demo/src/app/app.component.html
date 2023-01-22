@@ -1,0 +1,18 @@
+<h1>ControlValueAccessor impl. sub-form</h1>
+<form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname">
+    </mat-form-field>
+    <app-address-form formControlName="address" #subForm></app-address-form>
+</form>
+<p>
+  Here the address is within a sub component implementing ControlValueAccessor.<br>
+  Use these buttons to check differents forms value in the console : <br>
+  <button type="button" (click)="log(form)">Log main form</button>
+  <button type="button" (click)="log(subForm.form)">Log address form</button>
+</p>
